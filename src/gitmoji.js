@@ -131,15 +131,16 @@ class GitmojiCli {
   }
 
   _commit (answers) {
-    const title = `${answers.gitmoji} ${answers.title}`
-    const prefixReference = config.getIssueFormat() === constants.GITHUB
-      ? '#'
-      : ''
-    const reference = (answers.reference)
-      ? `${prefixReference}${answers.reference}`
-      : ''
+    const title = `${answers.gitmoji} ${answers.reference ? answers.reference + ' ' : ''}| ${answers.title}`
+    // const prefixReference = config.getIssueFormat() === constants.GITHUB
+    //   ? '#'
+    //   : ''
+    // const reference = (answers.reference)
+    //   ? `${prefixReference}${answers.reference}`
+    //   : ''
     const signed = config.getSignedCommit() ? '-S' : ''
-    const body = `${answers.message} ${reference}`
+    // const body = `${answers.message} ${reference}`
+    const body = `${answers.message}`
     const commit = `git commit ${signed} -m "${title}" -m "${body}"`
 
     if (!this._isAGitRepo()) {

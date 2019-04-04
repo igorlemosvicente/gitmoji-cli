@@ -1,12 +1,12 @@
 {
-  "name": "gitmoji-cli",
+  "name": "gitmoji-cli-belasis",
   "version": "1.9.2",
   "description": "A gitmoji client for using emojis on commit messages.",
   "engines": {
     "node": ">=6"
   },
   "bin": {
-    "gitmoji": "cli.js"
+    "belasis-commit": "cli.js"
   },
   "scripts": {
     "lint": "standard \"src/**/*.js\"",
